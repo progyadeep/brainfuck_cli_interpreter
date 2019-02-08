@@ -20,7 +20,7 @@ int main(){
 	}
 }
 
-void	process(string inp){
+void process(string inp){
 	for(int i=0; i<inp.length(); i++){
 		switch(inp[i]){
 			case '[':
@@ -54,7 +54,7 @@ void	process(string inp){
 				cout << (char)array[ptr];
 			break;
 			case ',':
-         		signed char tmp;
+        		signed char tmp;
          		cin >> tmp;
 				array[ptr] = (signed char)tmp;
 			break;
