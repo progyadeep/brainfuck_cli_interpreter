@@ -20,3 +20,6 @@ Do whatever you want with it. Just be kind enough to cite the link to my profile
   <li> Type <b>bf</b>. Press <b>Enter</b>.</li>
   <li> The <b>***</b> symbols indicate that the interpreter is running. Type your code and press enter to execute. Enter <b>"#"</b> to exit.</li>
 </ol>
+
+# Comments from the creator
+This shit is buggy. It won't crash, and it will execute any code correctly, but isn't great right now at pointing out what the error in your code is.
