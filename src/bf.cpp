@@ -11,8 +11,13 @@ void process(string);
 int main(){
 		ptr = 0;
 		string inp = "";
+		cout << "*** ";
     cin >> inp;
-		process(preprocess(inp));
+		while(inp[0] != '#'){
+			process(preprocess(inp));
+			cout << "*** ";
+			cin >> inp;
+		}
 	}
 
 void	process(string inp){
