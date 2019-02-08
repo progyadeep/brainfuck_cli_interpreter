@@ -15,7 +15,7 @@ int main(){
     cin >> inp;
 		while(inp[0] != '#'){
 			process(preprocess(inp));
-			cout << "*** ";
+			cout << "\n\n*** ";
 			cin >> inp;
 		}
 	}
