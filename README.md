@@ -11,7 +11,7 @@ Do whatever you want with it. Just be kind enough to cite the link to my profile
 # Installation and Usage
 <h3>Windows</h3>
 <ol>
-<li> Place the <a href="bin/BF.exe">bf.exe</a> file <i>somehwere</i> on your computer, and copy the location of the file.</li>
+<li> Place the <a href="bin/bf.exe">bf.exe</a> file <i>somehwere</i> on your computer, and copy the location of the file.</li>
   <li> Go to <b>Control Panel -> All Control Panel Items -> System</b>. Right click on <b>Advanced System Settings</b> on the left hand pane.</li>
   <li> Click <b>Environment variables -> PATH (under System variables) -> Edit</b>.</li>
   <li> Click <b>New</b> and paste the file location you copied earlier.</li>
