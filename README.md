@@ -1,12 +1,15 @@
 # BrainFuck Command-Line Interpreter
 The heading says what it is.
+<br/>  
 
 # Source language
 C++14<br/><br/>
 I initially wrote it in Java, but the idea of having to install Java to run an interpreter for another language seemed bizarre.
+<br/>  
 
 # License
 Do whatever you want with it. Just be kind enough to cite the link to my profile. Thank you.
+<br/>  
 
 # Installation and Usage
 <h3>Windows</h3>
@@ -20,6 +23,7 @@ Do whatever you want with it. Just be kind enough to cite the link to my profile
   <li> Type <b>bf</b>. Press <b>Enter</b>.</li>
   <li> The <b>***</b> symbols indicate that the interpreter is running. Type your code and press enter to execute. Enter <b>"#"</b> to exit.</li>
 </ol>
+<br/>  
 
 # Comments from the creator
 This shit is buggy. It won't crash, and it will execute any code correctly, but isn't great right now at pointing out what the error in your code is.
