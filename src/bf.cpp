@@ -51,7 +51,7 @@ void process(string inp){
 				ptr--;
 			break;
 			case '.':
-				cout << (char)array[ptr];
+				cout << array[ptr];
 			break;
 			case ',':
         		signed char tmp;
