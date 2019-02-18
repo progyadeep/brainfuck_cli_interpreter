@@ -8,7 +8,7 @@ I initially wrote it in Java, but the idea of having to install Java to run an i
 <br/><br/>  
 
 # License
-Do whatever you want with it. Just be kind enough to cite the link to my profile. Thank you.
+MIT License (<i><a href="LICENSE.md">please read</a></i>).Do whatever you want with it. Just be kind enough to cite the link to my profile. Thank you.
 <br/><br/>  
 
 # Usage
