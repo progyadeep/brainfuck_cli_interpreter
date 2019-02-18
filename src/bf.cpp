@@ -5,18 +5,17 @@ using namespace std;
 
 signed char array[30000];
 int ptr;
-
+string inpMain = "";
 void process(string, int);
 
 int main(){
 	ptr = 0;
-	string inp = "";
 	cout << "*** ";
-    cin >> inp;
-	while(inp[0] != '#'){
-		process(preprocess(inp), 0);
+    cin >> inpMain;
+	while(inpMain[0] != '#'){
+		process(preprocess(inpMain), 0);
 		cout << "\n*** ";
-		cin >> inp;
+		cin >> inpMain;
 	}
 }
 
@@ -34,7 +33,7 @@ void process(string inp, int IBF){
 					e++;
 				}
 				while(array[ptr] != 0){
-					process(inp.substr(i+1, e-i-1), i);
+					process(inp.substr(i+1, e-i-1), i+1);
 				}
 				i=e;
 			break;
@@ -64,8 +63,8 @@ void process(string inp, int IBF){
 					array[a] = (signed char)0;
 			break;
 			default:
-				cout << "Invalid token: \"" << inp[IBF+i] << "\" at index:" << IBF+i << endl;
-				exit(0);
+				cout << "Invalid token: \"" << inpMain[IBF+i] << "\" at index: " << IBF+i << endl;
+				//exit(0);
 		}
 	}
 }
