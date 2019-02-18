@@ -5,21 +5,27 @@ using namespace std;
 
 signed char array[30000];
 int ptr;
-string inpMain = "";
-void process(string, int);
+
+void process(string);
 
 int main(){
+	string inpMain = "";
 	ptr = 0;
 	cout << "*** ";
 	cin >> inpMain;
 	while(inpMain[0] != '#'){
-		process(preprocess(inpMain), 0);
+		inpMain = preprocess(inpMain);
+		//checking for fucked up input:
+		if(inpMain != "IT")
+			process(inpMain);
+
+		//on to next cycle:	
 		cout << "\n*** ";
 		cin >> inpMain;
 	}
 }
 
-void process(string inp, int IBF){
+void process(string inp){
 	for(int i=0; i<inp.length(); i++){
 		switch(inp[i]){
 			case '[':
@@ -33,7 +39,7 @@ void process(string inp, int IBF){
 					e++;
 				}
 				while(array[ptr] != 0){
-					process(inp.substr(i+1, e-i-1), i+1);
+					process(inp.substr(i+1, e-i-1));
 				}
 				i=e;
 			break;
@@ -63,7 +69,7 @@ void process(string inp, int IBF){
 					array[a] = (signed char)0;
 			break;
 			default:
-				cout << "Invalid token: \"" << inpMain[IBF+i] << "\" at index: " << IBF+i << endl;
+				cout << "IDK What to do now\n";
 				//exit(0);
 		}
 	}
