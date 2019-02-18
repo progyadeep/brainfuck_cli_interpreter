@@ -6,7 +6,7 @@ using namespace std;
 signed char array[30000];
 int ptr;
 
-void process(string);
+void process(string, int);
 
 int main(){
 	ptr = 0;
@@ -14,13 +14,13 @@ int main(){
 	cout << "*** ";
     cin >> inp;
 	while(inp[0] != '#'){
-		process(preprocess(inp));
+		process(preprocess(inp), 0);
 		cout << "\n*** ";
 		cin >> inp;
 	}
 }
 
-void process(string inp){
+void process(string inp, int IBF){
 	for(int i=0; i<inp.length(); i++){
 		switch(inp[i]){
 			case '[':
@@ -34,7 +34,7 @@ void process(string inp){
 					e++;
 				}
 				while(array[ptr] != 0){
-					process(inp.substr(i+1, e-i-1));
+					process(inp.substr(i+1, e-i-1), i);
 				}
 				i=e;
 			break;
@@ -58,8 +58,13 @@ void process(string inp){
          		cin >> tmp;
 				array[ptr] = (signed char)tmp;
 			break;
+			case '$':
+				ptr=0;
+				for(int a=0; a<30000; a++)
+					array[a] = (signed char)0;
+			break;
 			default:
-				cout << "Invalid token: \"" << inp[i] << "\" at " << i << endl;
+				cout << "Invalid token: \"" << inp[IBF+i] << "\" at index:" << IBF+i << endl;
 				exit(0);
 		}
 	}
