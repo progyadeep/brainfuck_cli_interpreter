@@ -3,7 +3,7 @@ using namespace std;
 
 #include "preprocess.h"
 
-signed char array[30000];
+signed char arr[30000];
 int ptr;
 
 void process(string);
@@ -38,16 +38,16 @@ void process(string inp){
 						c--;
 					e++;
 				}
-				while(array[ptr] != 0){
+				while(arr[ptr] != 0){
 					process(inp.substr(i+1, e-i-1));
 				}
 				i=e;
 			break;
 			case '+':
-				array[ptr]++;
+				arr[ptr]++;
 			break;
 			case '-':
-				array[ptr]--;
+				arr[ptr]--;
 			break;
 			case '>':
 				ptr++;
@@ -56,17 +56,17 @@ void process(string inp){
 				ptr--;
 			break;
 			case '.':
-				cout << array[ptr];
+				cout << arr[ptr];
 			break;
 			case ',':
         		signed char tmp;
          		cin >> tmp;
-				array[ptr] = (signed char)tmp;
+				arr[ptr] = (signed char)tmp;
 			break;
 			case '$':
 				ptr=0;
 				for(int a=0; a<30000; a++)
-					array[a] = (signed char)0;
+					arr[a] = (signed char)0;
 			break;
 			default:
 				cout << "IDK What to do now\n";
