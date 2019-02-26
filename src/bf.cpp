@@ -70,7 +70,6 @@ void process(string inp){
 			break;
 			default:
 				cout << "IDK What to do now\n";
-				//exit(0);
 		}
 	}
 }
