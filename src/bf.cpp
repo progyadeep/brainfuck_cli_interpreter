@@ -1,16 +1,20 @@
 #include <iostream>
+#include <cstdlib>
+#include "preprocess.h"
 using namespace std;
 
-#include "preprocess.h"
+union Cell{
+    signed char c;
+};
 
-signed char arr[30000];
-int ptr;
+union Cell* ptr;
+union Cell* start;
 
 void process(string);
 
 int main(){
-	string inpMain = "";
-	ptr = 0;
+    ptr = (union Cell*)calloc(30000, sizeof(union Cell));
+    start = ptr;
 	cout << "*** ";
 	cin >> inpMain;
 	while(inpMain[0] != '#'){
@@ -23,6 +27,9 @@ int main(){
 		cout << "\n*** ";
 		cin >> inpMain;
 	}
+	
+	free(start);
+	return 0;
 }
 
 void process(string inp){
@@ -38,16 +45,16 @@ void process(string inp){
 						c--;
 					e++;
 				}
-				while(arr[ptr] != 0){
+				while(ptr->c != 0){
 					process(inp.substr(i+1, e-i-1));
 				}
 				i=e;
 			break;
 			case '+':
-				arr[ptr]++;
+				ptr->c++;
 			break;
 			case '-':
-				arr[ptr]--;
+				ptr->c--;
 			break;
 			case '>':
 				ptr++;
@@ -56,17 +63,16 @@ void process(string inp){
 				ptr--;
 			break;
 			case '.':
-				cout << arr[ptr];
+				cout << ptr->c;
 			break;
 			case ',':
         		signed char tmp;
          		cin >> tmp;
-				arr[ptr] = (signed char)tmp;
+				ptr->c = (signed char)tmp;
 			break;
 			case '$':
-				ptr=0;
-				for(int a=0; a<30000; a++)
-					arr[a] = (signed char)0;
+				free(start);
+				ptr = (union Cell*)calloc(30000, sizeof(union Cell));
 			break;
 			default:
 				cout << "IDK What to do now\n";
